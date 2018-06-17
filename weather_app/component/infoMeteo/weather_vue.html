@@ -1,0 +1,35 @@
+<div>
+	<center><h1> Weather App </h1></center>
+	<button ng-click="saveVille(ville,latitude,longitude)" class="save">Save</button>
+	<input type="Text" ng-model="ville" name="Location" >
+
+	<button ng-click="changeLocation(ville)">Search</button><br/><br/>
+
+	<button ng-click='changeCelFar()'>Change Degree</button>
+	<div ng-repeat="ville in villeSave track by $index">
+			{{ville[0]}} <input type="radio" name="ville" ng-click="changeLocation(ville[0])"/>
+	</div>
+	
+	<hr/>
+
+		Time zone: {{weatherTimezone}}<br/>
+		Degres: {{degrees}}<br/>
+		Date: {{date | date: "medium"}}<br/>
+		{{daily.summary}}<br/><hr>
+			Temperature Max: {{daily.apparentTemperatureHigh}}<br/>
+			Temperature Min: {{daily.apparentTemperatureLow}}<br/>
+		Sunrise: {{daily.sunriseTime | date : "medium"}}<br/>
+		Sunset: {{daily.sunsetTime | date : "medium"}}<br/>
+
+		<hr/>
+		<div class = "row">
+			<div ng-repeat="hour in hourly | limitTo : 24" class ="hourly">
+				<div class="col-md-2 weather ">
+					{{hour.time | date: "medium"}}<br/>
+					humidite: {{hour.humidity}}<br/>
+					wind speed: {{hour.windSpeed}}<br/>
+					probabilite de precipitation: {{hour.precipProbability}}
+				</div>
+			</div>
+		</div>
+</div>

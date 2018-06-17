@@ -1,0 +1,9 @@
+section {
+  font-size: 100px;
+}
+section header {
+  color: red;
+}
+section article {
+  color: black;
+}

@@ -1,0 +1,16 @@
+#demo{
+	position: relative;
+	top:50px;
+}
+
+.component-fade-enter-active, .component-fade-leave-active {
+	position: absolute;
+	left: 0px;
+  	transition: opacity .6s;
+  	transition: left .6s;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  	opacity: 0;
+  	left: 50px;
+}

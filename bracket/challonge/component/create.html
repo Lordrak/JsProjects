@@ -1,0 +1,11 @@
+<div><h1>Creation de Tournoi</h1></div>
+<label>Nom</label><input type="text" name="" ng-model="tournoi.name">
+<label>Url</label><input type="text" name="" ng-model="tournoi.url">
+<label>Nombre de Participant Max</label><input type="text" name="" ng-model="tournoi.nb_player">
+<select ng-model="tournoi.type">
+	<option>single elimination</option>
+	<option>double elimination</option>
+	<option>round robin</option>
+	<option>swiss</option>
+</select>
+<button ng-click="create(tournoi)">Envoyer</button>

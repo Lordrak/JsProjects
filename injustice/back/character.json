@@ -1,0 +1,22 @@
+{
+	"name":"Supergirl",
+	"ender":[
+		{
+			"move":112,
+			"character":[]
+		},
+		{
+			"move":"B12+3",
+			"character":[]
+		},
+		{
+			"move":"F2",
+			"character":[]
+		},
+		{
+			"move":"AIR THROW",
+			"character": []
+		}
+	]
+
+}

@@ -1,0 +1,32 @@
+<!--
+
+
+<select ng-model="url" ng-change="display(url)">
+	<option ng-repeat="tournoi in listTournoi track by $index">{{tournoi[1].tournament.url}}</option>
+</select>
+
+
+
+ <table ng-if="tournoiInfo.tournament.state != 'pending'">
+	<tr><td colspan="{{winner.length}}"><h1>Winner</h1></td></tr><tr style="position:relative">
+	<td ng-repeat="round in winner  track by $index"  >
+		<div ng-repeat="match in round  track by $index" class="row">
+			<div class="col-md-9" style="background-color: #FFFF00">{{match.name1p}}</div> <span style="color:red" class="col-md-2"> {{match.scoresCsv[0]}} </span><br/>
+			<div class="col-md-9" style="background-color: #00FFFF">{{match.name2p}}</div> <span style="color:red; margin-top:5px;" class="col-md-2"> {{match.scoresCsv[2]}} </span>
+			
+		</div>	
+	</td>
+</tr>	
+<tr><td colspan="{{looser.length}}"><h1>Looser</h1></td></tr>
+<tr>
+	<td ng-repeat="round in looser  track by $index" >
+		<center>Round {{round[0].round}}</center>
+		<div ng-repeat="match in round  track by $index" class="row">
+			
+			<div class="col-md-9" style="background-color: #FFFF00">{{match.name1p}}</div> <span style="color:red" class="col-md-2"> {{match.scoresCsv[0]}} </span><br/>
+			<div class="col-md-9" style="background-color: #00FFFF">{{match.name2p}}</div> <span style="color:red; margin-top:5px;" class="col-md-2"> {{match.scoresCsv[2]}} </span>
+			
+		</div>
+
+	</td>
+</tr></table>

@@ -1,0 +1,24 @@
+#projet, #page3{
+	border: 1px black solid;
+	box-shadow: 5px 5px 20px;
+	margin-top : 10px;
+}
+
+#page2{
+	background: red;
+}
+
+#page3{
+	background: blue;
+}
+
+a:focus{
+	font-size: 20px;
+	color : red;
+}
+
+#projet{
+	background: rgba(255,255,255,0,8);
+	height: 100%;
+	width: 100%;
+}

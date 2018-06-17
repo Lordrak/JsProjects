@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div id="demo">
+			<input type="checkbox" name="comp" v-on:change="onChange"/>  
+		  	<transition name="component-fade" mode="out-in">
+			  <component v-bind:is="view"></component>
+			</transition>
+		</div>
+	</div>
+
+	<template id="component1">
+		<div>
+			<h1>Component 1</h1>
+			<input type="text" name="testA" placeholder="testA">
+			<input type="text" name="testB" placeholder="testB">
+			<input type="button" value="envoyer" name="">
+		</div>
+	</template>
+
+	<template id="component2">
+		<div>
+			<h1>Component 2</h1>
+			<input type="text" name="testA" placeholder="testC">
+			<input type="text" name="testB" placeholder="testD">
+			<input type="button" value="envoyer" name="">
+		</div>
+	</template>
+
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+  el: '#demo',
+  data: {
+    view: 'v-a'
+  },
+  components: {
+    'v-a': {
+      template: `#component1`
+    },
+    'v-b': {
+      template: '#component2'
+    }
+  },
+  methods: {
+  	onChange: function(){
+  		if(this.view == 'v-a'){
+  			this.view = 'v-b'
+  		}
+  		else{
+  			this.view = 'v-a'
+  		}
+
+  	}
+  }
+})
+
+</script>
+</body>
+</html>
